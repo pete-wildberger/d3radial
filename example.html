@@ -1,3 +1,113 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<style>
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+</style>
+
+<body>
+
+<!-- load the d3.js library -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var json = {
+  reports: [
+    {
+      id: 49883,
+      user_id: 50621,
+      name: 'Richard Hendricks',
+      role: 'Admin',
+      avatar: '/assets/img_no_photo-tiny_thumb.png',
+      job_title: 'CEO',
+      department: 'Engineering',
+      reports: [
+        {
+          id: 49887,
+          user_id: 50630,
+          name: 'Bertram Gilfoyle',
+          role: 'Employee',
+          avatar: '/assets/img_no_photo-tiny_thumb.png',
+          job_title: 'Senior Systems Architect',
+          department: 'Engineering'
+        },
+        {
+          id: 49888,
+          user_id: 50631,
+          name: 'Dinesh Chugtai',
+          role: 'Employee',
+          avatar: '/assets/img_no_photo-tiny_thumb.png',
+          job_title: 'Senior Programmer',
+          department: 'Engineering'
+        },
+        {
+          id: 49889,
+          user_id: 50632,
+          name: 'Jared Dunn',
+          role: 'Admin',
+          avatar: '/assets/img_no_photo-tiny_thumb.png',
+          job_title: 'Head of Business Development',
+          department: 'Human Resources',
+          reports: [
+            {
+              id: 49893,
+              user_id: 50636,
+              name: 'Carla Walton',
+              role: 'Employee',
+              avatar: '/assets/img_no_photo-tiny_thumb.png',
+              job_title: 'Platform Engineer',
+              department: 'Engineering'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 49894,
+      user_id: 50628,
+      name: 'Erlich Bachman',
+      role: 'Manager',
+      avatar: '/assets/img_no_photo-tiny_thumb.png',
+      job_title: 'Major Investor',
+      department: 'Investor',
+      reports: [
+        {
+          id: 49891,
+          user_id: 50633,
+          name: 'Jian Yang',
+          role: 'Employee',
+          avatar: '/assets/img_no_photo-tiny_thumb.png',
+          job_title: 'Developer',
+          department: 'Engineering'
+        }
+      ]
+    },
+    {
+      id: 49885,
+      user_id: 50629,
+      name: 'Nelson Bighetti',
+      role: 'Employee',
+      avatar: '/assets/img_no_photo-tiny_thumb.png',
+      job_title: 'Major Investor',
+      department: 'Investor'
+    }
+  ]
+};
+
 // Set the dimensions and margins of the diagram
 var margin = { top: 20, right: 90, bottom: 30, left: 90 },
   width = 960 - margin.left - margin.right,
@@ -30,8 +140,6 @@ root.x0 = height / 2;
 root.y0 = 0;
 
 // Collapse after the second level
-console.log('root ', root);
-
 root.children.forEach(collapse);
 
 update(root);
@@ -201,3 +309,5 @@ function update(source) {
     update(d);
   }
 }
+</script>
+</body>

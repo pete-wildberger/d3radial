@@ -1,0 +1,22 @@
+{
+  "name": "radial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pete-wildberger/d3radial.git"
+  },
+  "author": "Peter Wildberger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pete-wildberger/d3radial/issues"
+  },
+  "homepage": "https://github.com/pete-wildberger/d3radial#readme",
+  "dependencies": {
+    "d3": "^4.11.0"
+  }
+}
