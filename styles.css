@@ -13,3 +13,13 @@
   stroke: #ccc;
   stroke-width: 2px;
 }
+.chart {
+  width: 75%;
+  float: left;
+  display: inline-block;
+}
+.profile {
+  width: 25%;
+  float: left;
+  display: inline-block;
+}
