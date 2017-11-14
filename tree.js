@@ -24,7 +24,7 @@ var treemap = d3.tree().size([height, width]);
 // Assigns parent, children, height, depth
 root = d3.hierarchy(json, function(d) {
   console.log('d ', d);
-  return d.reports;
+  return d.children;
 });
 root.x0 = height / 2;
 root.y0 = 0;
