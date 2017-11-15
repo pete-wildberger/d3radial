@@ -12,5 +12,11 @@ svg
   .attr('y', d => bheight - d)
   .attr('width', rectWidth)
   .attr('height', d => d)
-  .attr('fill', 'blue')
+  .attr('fill', d => {
+    if (d === 250) {
+      return 'red';
+    } else {
+      return 'blue';
+    }
+  })
   .attr('stroke', '#fff');
