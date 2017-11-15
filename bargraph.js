@@ -8,9 +8,7 @@ svg
   .data(bar)
   .enter()
   .append('rect')
-  .attr('x', (d, i) => {
-    i * rectWidth;
-  })
+  .attr('x', (d, i) => i * rectWidth)
   .attr('y', d => bheight - d)
   .attr('width', rectWidth)
   .attr('height', d => d)
