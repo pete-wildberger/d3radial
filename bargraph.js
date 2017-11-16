@@ -28,13 +28,14 @@ graph
       return 'blue';
     }
   })
-  .attr('stroke', '#fff');
+  .attr('stroke', '#fff')
+  .attr('transform', 'translate(20, 0)');
 
 let yAxis = d3.axisLeft().scale(yScale);
 d3
   .select('svg')
   .append('g')
-  .attr('transform', 'translate(40, 20)')
+  .attr('transform', 'translate(20, 0)')
   .call(yAxis);
 
 console.log(graph.nodes());
