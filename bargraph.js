@@ -29,13 +29,19 @@ graph
     }
   })
   .attr('stroke', '#fff')
-  .attr('transform', 'translate(20, 0)');
-
+  .attr('transform', 'translate(40, 0)');
+// axis.tickFormat()
 let yAxis = d3.axisLeft().scale(yScale);
 d3
   .select('svg')
   .append('g')
-  .attr('transform', 'translate(20, 0)')
+  .attr('transform', 'translate(30, 0)')
   .call(yAxis);
+console.log('yAxis ', yAxis);
 
+let text = graph.selectAll('text').attr('fill', d => {
+  return d === 200 ? 'red' : 'green';
+});
+
+console.log('text ', text);
 console.log(graph.nodes());
