@@ -2,15 +2,18 @@ let bar = [100, 250, 175, 200, 120];
 let rectWidth = 100;
 let height = 300;
 
+// getting min and max of data for scale
 let extent = d3.extent(bar);
 console.log('extent ', extent);
 
+// building scale for graph
 let yScale = d3
   .scaleLinear()
   .domain(extent)
   .range([height, 0]);
 console.log('yScale ', yScale);
 
+// main bargraph
 let graph = d3.select('.bargraph').append('svg');
 graph
   .selectAll('rect')
@@ -30,7 +33,8 @@ graph
   })
   .attr('stroke', '#fff')
   .attr('transform', 'translate(40, 0)');
-// axis.tickFormat()
+
+// appending yAxis
 let yAxis = d3.axisLeft().scale(yScale);
 d3
   .select('svg')
@@ -39,6 +43,8 @@ d3
   .call(yAxis);
 console.log('yAxis ', yAxis);
 
+// yAxis tick styling
+// axis.tickFormat()
 let text = graph.selectAll('text').attr('fill', d => {
   return d === 200 ? 'red' : 'green';
 });
