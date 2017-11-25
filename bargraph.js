@@ -13,6 +13,12 @@ let yScale = d3
   .range([height, 0]);
 console.log('yScale ', yScale);
 
+let xScale = d3
+  .scaleLinear()
+  .domain(bar.length)
+  .range([bar.length, 0]);
+console.log('xScale ', xScale);
+
 // main bargraph
 let graph = d3.select('.bargraph').append('svg');
 graph
@@ -42,6 +48,14 @@ d3
   .attr('transform', 'translate(30, 0)')
   .call(yAxis);
 console.log('yAxis ', yAxis);
+
+let xAxis = d3.axisBottom().scale(xScale);
+d3
+  .select('svg')
+  .append('g')
+  .attr('transform', 'translate(0, 30)')
+  .call(xAxis);
+console.log('xAxis ', xAxis);
 
 // yAxis tick styling
 // axis.tickFormat()
